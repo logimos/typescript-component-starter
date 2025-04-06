@@ -3,13 +3,13 @@
   "extends": "./tsconfig.json", // Inherit base settings
   "compilerOptions": {
     /* Emit Declarations Only */
-    "noEmit": false,           // We *do* want to emit files from this config
-    "declaration": true,       // Generate corresponding '.d.ts' file
-    "declarationMap": true,    // Generate sourcemaps for declarations
+    "noEmit": false, // We *do* want to emit files from this config
+    "declaration": true, // Generate corresponding '.d.ts' file
+    "declarationMap": true, // Generate sourcemaps for declarations
     "emitDeclarationOnly": true, // Only emit '.d.ts' files, not JS
-    "outDir": "dist/types"     // Output directory for declaration files
+    "outDir": "dist/types" // Output directory for declaration files
   },
-  "include": ["src"],          // Only include source files for declaration generation
+  "include": ["src"], // Only include source files for declaration generation
   "exclude": [
     "node_modules",
     "dist",

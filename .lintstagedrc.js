@@ -1,4 +1,3 @@
-// .lintstagedrc.js
 module.exports = {
   // Lint & Prettify TS and JS files
   '**/*.(ts|tsx|js|jsx)': (filenames) => [

@@ -3,14 +3,14 @@ name: Release
 
 on:
   release:
-    types: [ published ] # Trigger when a release is published in GitHub
+    types: [published] # Trigger when a release is published in GitHub
 
 jobs:
   publish-gpr:
     runs-on: ubuntu-latest
     permissions:
-      contents: read      # Needed to checkout the code
-      packages: write     # Needed to publish packages to GPR
+      contents: read # Needed to checkout the code
+      packages: write # Needed to publish packages to GPR
 
     steps:
       - name: Checkout code
@@ -38,6 +38,7 @@ jobs:
         run: npm publish --access public # Adjust --access if needed (public/restricted)
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use the built-in GITHUB_TOKEN
+
 
       # Optional: Publish docs to GitHub Pages
       # - name: Deploy Docs to GitHub Pages

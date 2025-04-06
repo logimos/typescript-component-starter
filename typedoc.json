@@ -9,7 +9,5 @@
   "excludeExternals": true,
   "theme": "default",
   "gitRevision": "main",
-  "plugin": [
-     "typedoc-plugin-markdown"
-  ]
+  "plugin": ["typedoc-plugin-markdown"]
 }

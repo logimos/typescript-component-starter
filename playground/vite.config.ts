@@ -12,7 +12,7 @@ export default defineConfig({
   resolve: {
     alias: {
       // Map your package name to the source for better HMR during dev
-      '@<your-github-username>/<your-repo-name>': '../src/index.ts',
+      '@<your-github-username>/<your-repo-name>': '../../src/index.ts',
       // Add other aliases if needed
     },
   },

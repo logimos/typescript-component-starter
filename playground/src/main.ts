@@ -1,4 +1,4 @@
-import './style.css'; // Basic styling
+import '../style.css'; // Basic styling
 import { setupCounter } from '@<your-github-username>/<your-repo-name>'; // Import from your library
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `

@@ -12,13 +12,15 @@ export default defineConfig({
       reporter: ['text', 'json', 'html', 'lcov'], // Output formats
       reportsDirectory: './coverage', // Directory for coverage reports
       include: ['src/**'], // Files to include in coverage analysis
-      exclude: [ // Files/patterns to exclude
+      exclude: [
+        // Files/patterns to exclude
         'src/index.ts', // Often just exports, adjust if it has logic
         '**/*.d.ts',
         '**/types.ts', // Example: exclude type definition files
       ],
       all: true, // Report coverage for all included files, even untested ones
-      thresholds: { // Optional: enforce coverage thresholds
+      thresholds: {
+        // Optional: enforce coverage thresholds
         lines: 80,
         functions: 80,
         branches: 80,

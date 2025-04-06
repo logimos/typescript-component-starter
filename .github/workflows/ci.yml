@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop ] # Adjust branches as needed
+    branches: [main, develop] # Adjust branches as needed
   pull_request:
-    branches: [ main, develop ]
+    branches: [main, develop]
 
 jobs:
   lint-test-build:
@@ -36,8 +36,7 @@ jobs:
           # flags: unittests
           # fail_ci_if_error: true
         env:
-           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Build project
         run: npm run build

@@ -12,8 +12,8 @@ describe('someFunction', () => {
 
   it('should handle null input gracefully (based on implementation)', () => {
     // Depending on how you want to handle null/undefined, adjust test
-    // expect(someFunction(null as any)).toBe('Hello there!'); // Example if null becomes ''
-    expect(someFunction(null as any)).toBe('Hello, null!'); // If it treats null as string "null"
+    expect(someFunction(null as any)).toBe('Hello there!'); // Example if null becomes ''
+    // expect(someFunction(null as any)).toBe('Hello, null!'); // If it treats null as string "null"
   });
 });
 
