@@ -1,0 +1,12 @@
+node_modules
+dist
+coverage
+docs
+*.md
+*.html
+*.json
+*.nix
+*.yml
+*.yaml
+.husky/
+.vscode/

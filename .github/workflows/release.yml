@@ -1,0 +1,47 @@
+# .github/workflows/release.yml
+name: Release
+
+on:
+  release:
+    types: [ published ] # Trigger when a release is published in GitHub
+
+jobs:
+  publish-gpr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read      # Needed to checkout the code
+      packages: write     # Needed to publish packages to GPR
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: 'https://npm.pkg.github.com' # Set registry for GPR
+          scope: '@<your-github-username>' # Set your scope (GitHub username or org)
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      # Optional: Generate docs before publishing if you want them in the repo tagged state
+      # - name: Generate Documentation
+      #   run: npm run docs
+
+      - name: Publish to GitHub Packages
+        run: npm publish --access public # Adjust --access if needed (public/restricted)
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use the built-in GITHUB_TOKEN
+
+      # Optional: Publish docs to GitHub Pages
+      # - name: Deploy Docs to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./docs

@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true, // Enables compatibility with CommonJS modules
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "target": "ES2020", // Target modern JS features
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "resolveJsonModule": true, // Allow importing JSON files
+    "moduleDetection": "force", // Treat files as modules even without imports/exports
+    "isolatedModules": true, // Ensure files can be safely transpiled individually
+
+    /* Strictness */
+    "strict": true, // Enable all strict type-checking options
+    "noUncheckedIndexedAccess": true, // Add 'undefined' to index signatures
+    "noImplicitOverride": true, // Ensure overriding members use the 'override' keyword
+
+    /* Bundler Options: */
+    "module": "ESNext", // Use modern module system
+    "moduleResolution": "Bundler", // Mimics bundler resolution (Vite, Rollup, etc.)
+    "outDir": "dist", // Redirect output structure to the directory
+    "sourceMap": true, // Generate corresponding '.map' file for debugging
+
+    /* Type Checking */
+    "lib": ["ES2022", "DOM", "DOM.Iterable"], // Specify library files to be included
+
+    /* Emit */
+    "noEmit": true, // Do not emit output (build handled by tsup/rollup) - Important!
+    "declaration": false // Do not emit declaration files here (handled by tsconfig.build.json)
+  },
+  "include": ["src", "tests", "playground/src"], // Files included in type checking
+  "exclude": ["node_modules", "dist"] // Files excluded
+}
