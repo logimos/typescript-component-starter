@@ -1,4 +1,3 @@
-// playground/src/main.ts
 import './style.css'; // Basic styling
 import { setupCounter } from '@<your-github-username>/<your-repo-name>'; // Import from your library
 

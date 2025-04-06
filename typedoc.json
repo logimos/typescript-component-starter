@@ -1,0 +1,15 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "tsconfig": "tsconfig.json",
+  "name": "<Your Library Name>",
+  "readme": "README.md",
+  "excludePrivate": true,
+  "excludeExternals": true,
+  "theme": "default",
+  "gitRevision": "main",
+  "plugin": [
+     "typedoc-plugin-markdown"
+  ]
+}

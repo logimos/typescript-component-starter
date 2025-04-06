@@ -1,12 +1,91 @@
 {
-  "name": "logimos-component-starter",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@<your-github-username>/<your-repo-name>",
+  "version": "0.1.0",
+  "description": "A reusable JavaScript module built with TypeScript.",
+  "keywords": [
+    "typescript",
+    "javascript",
+    "module",
+    "template"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com",
+    "url": "https://github.com/<your-github-username>"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<your-github-username>/<your-repo-name>.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<your-github-username>/<your-repo-name>/issues"
+  },
+  "homepage": "https://github.com/<your-github-username>/<your-repo-name>#readme",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist/",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "dev:playground": "npm --prefix playground run dev",
+    "dev:example": "npm --prefix example run dev",
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --cache",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --write . --cache",
+    "format:check": "prettier --check . --cache",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage",
+    "docs": "typedoc",
+    "prepare": "husky || true",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
+    "typedoc": "^0.25.13",
+    "typedoc-plugin-markdown": "^3.17.1",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }
