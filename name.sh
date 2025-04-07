@@ -10,6 +10,6 @@ script_name=$(basename "$0")
 # Replace placeholders in all files except name.sh
 find . -type f ! -name "$script_name" ! -name "*.sh" -exec sed -i "s/@<your-github-username>/@$username/g" {} +
 find . -type f ! -name "$script_name" ! -name "*.sh" -exec sed -i "s/<your-github-username>/$username/g" {} +
-find . -type f ! -name "$script_name" ! -name "*.sh" -exec sed -i "s/<your-repo-name>/@$repo_name/g" {} +
+find . -type f ! -name "$script_name" ! -name "*.sh" -exec sed -i "s/<your-repo-name>/$repo_name/g" {} +
 
 echo "All placeholders have been replaced."
