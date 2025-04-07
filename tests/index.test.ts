@@ -10,10 +10,11 @@ describe('someFunction', () => {
     expect(someFunction('')).toBe('Hello there!');
   });
 
-  it('should handle null input gracefully (based on implementation)', () => {
-    // Depending on how you want to handle null/undefined, adjust test
-    expect(someFunction(null as any)).toBe('Hello there!'); // Example if null becomes ''
-    // expect(someFunction(null as any)).toBe('Hello, null!'); // If it treats null as string "null"
+  it('should handle null input gracefully', () => {
+    // Option 1: Use type assertion with unknown (safer than any)
+    expect(someFunction(null as unknown as string)).toBe('Hello there!');
+    // Option 2: Update the function signature to accept null/undefined
+    // This would require changing the implementation to: function someFunction(name: string | null | undefined): string
   });
 });
 
